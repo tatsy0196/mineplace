@@ -1,0 +1,24 @@
+
+/*main*************************************/
+
+main{display: flex ;
+justify-content: center;}
+main div{
+    background-color: rgb(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    margin-top: 5%;
+    color: lightgrey;
+    width:96vw;
+    margin: 5% 1vw 0 1vw ;
+    padding: 1%;
+    
+}
+main article{
+    margin-top :3%;
+}
+main h1{
+    padding-bottom: 1em;
+}
+main p{
+    text-align:center ;
+}

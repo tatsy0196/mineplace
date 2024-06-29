@@ -1,0 +1,15 @@
+footer{
+    width: 100vw;
+    background-color: var(--textcolor);
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+footer a{
+    color: black;
+    height: 5vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}

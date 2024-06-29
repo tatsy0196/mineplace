@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Mes parcelles</title>
+    <link rel="stylesheet" type="text/css" href="design/mes_annonces.css">
+    <link rel="stylesheet" type="text/css" href="design/header.css">
+    <link rel="stylesheet" type="text/css" href="design/login.css">
+  <link rel="stylesheet" type="text/css" href="design/footer.css">
+    <link rel="stylesheet" type="text/css" href="design/main.css">
+    <link rel="icon" type="image/png" href="../data/img/logo carré.png">
+    <script src="javascript/popup.js"></script>
+    <script src="javascript/fetch.js"></script>
+</head>
+
+<body>
+
+    <div id="popup_login" style="display: none;">
+        <p class="quit" onclick="btn_cancel_onclick()">×</p>
+        <h1>Connexion</h1>
+        <input type="text" name="search" id="inputid" placeholder="Identifiant">
+        <input type="password" name="search" id="inputmdp" placeholder="Mot de passe">
+        <a href="" id="forgot_password">Mot de passe oublié ?</a>
+        <label id="connexionError" class="labelError" style="visibility: hidden;" n> Identifiant ou mot de passe
+            incorrecte !</label>
+        <div>
+            <button class="btn_secondary" onclick="btn_signin_onclick()">Créer un compte</a>
+                <button class="btn_primary" id="btnSeconnecter">Se connecter</button>
+        </div>
+    </div>
+
+    <div id="popup_signin" style="display: none;">
+        <p class="quit" onclick="btn_cancel_onclick()">×</p>
+        <h1>Nouveau compte</h1>
+
+        <input type="text" name="search" value="" placeholder="Identifiant">
+        <input type="text" name="search" value="" placeholder="Nom">
+        <input type="text" name="search" value="" placeholder="Prénom">
+        <input type="text" name="search" value="" placeholder="Adresse mail">
+        <input type="password" name="search" value="" placeholder="Mot de passe">
+        <input type="password" name="search" value="" placeholder="Confirmer le Mot de passe">
+        <div>
+            <button class="btn_secondary" onclick="btn_return_onclick()">Retour</button>
+            <button class="btn_primary" onclick="signIn()">Créer</button>
+        </div>
+
+    </div>
+
+    <header>
+        <div>
+            <a href="mainpage.html" target="_parent">
+                <img src="../data/img/logo.png" alt="logo MinePlace" class="logo">
+            </a>
+            <div id="header_buttons">
+                <div id="option" style="display: none;">
+                    <a href="page_mon_compte">
+                        <img src="../data/img/command block.webp">
+                        Options</a>
+                </div>
+                <div id="logout" style="display: none;">
+                    <a href="#">
+                        <img src="../data/img/head.webp">
+                        Se déconnecter</a>
+                </div>
+                <div id="login" style="display: flex;" onclick="btn_login_onclick()">
+                    <img src="../data/img/head.webp">
+                    <p>Se connecter</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <input id="search" type="text" name="search" value="" placeholder="Recherche">
+                    <img src="../data/img/longue vue.png" alt="" class="spyglass">
+                </li>
+                <li><a href="deposer_annonce.html">Déposer une annonce</a></li>
+                <li><a href="mes_annonces.html">Mes annonces</a></li>
+                <li><a href="mes_parcelles.html">Mes parcelles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="mainpage">
+        <h2>Mes parcelles</h2>
+        <div>
+
+            <div class="article" style="display: none;">
+                <img class="image" src="../data/img/testslide2.jpg" alt="">
+                <div class="description-article-mainPage">
+                    <h2 class="nom">Château</h2>
+                    <h3 class="prix">4565€</h3>
+                    <table>
+                        <tr>
+                            <th>Biomes</th>
+                            <th>Coordonnées</th>
+                            <th>Taille</th>
+                        </tr>
+                        <tr>
+                            <td class="biomes">Plaines, Taiga, Dark forest, deep dark </td>
+                            <td class="coordonnees">X=1550 Z=600</td>
+                            <td class="taille">50x50</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div id="parcelle-list"></div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="">Personnalisation des cookies</a>
+<a href="conditions_legales.html">Conditions de vente et d'achats</a>
+<a href="nous_contacter.html">Nous contacter</a>
+    </footer>
+
+</body>

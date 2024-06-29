@@ -1,0 +1,24 @@
+
+
+/***********main*******************/
+
+#cond_dut_main{
+   display: flex;
+    justify-content:center; }
+
+#cond_dut_maindiv{
+    background-color: rgb(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    margin-top: 5%;
+    color: lightgrey;
+    width:50%;
+    
+}
+.cond_dut_p{
+    margin: 1%;
+    padding: 1%
+}
+.cond_dut_article{
+    margin: 1%;
+    margin-bottom: 5%;
+}

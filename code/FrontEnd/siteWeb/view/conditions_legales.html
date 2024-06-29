@@ -1,0 +1,162 @@
+<head>
+  <title>mention légale</title>
+  <link rel="stylesheet" type="text/css" href="design/mentionLégale.css">
+  <link rel="stylesheet" type="text/css" href="design/login.css">
+  <link rel="stylesheet" type="text/css" href="design/main.css">
+  <link rel="stylesheet" type="text/css" href="design/header.css">
+  <link rel="stylesheet" type="text/css" href="design/footer.css">
+  <link rel="icon" type="image/png" href="../data/img/logo carré.png">
+  <script src="javascript/popup.js"></script>
+  <script src="javascript/fetch.js"></script>
+</head>
+
+<body>
+
+  <div id="popup_login" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Connexion</h1>
+    <input type="text" name="search" id="inputid" placeholder="Identifiant">
+    <input type="password" name="search" id="inputmdp" placeholder="Mot de passe">
+    <a href="" id="forgot_password">Mot de passe oublié ?</a>
+    <label id="connexionError" class="labelError" style="visibility: hidden;" n> Identifiant ou mot de passe incorrecte
+      !</label>
+    <div>
+      <button class="btn_secondary" onclick="btn_signin_onclick()">Créer un compte</a>
+        <button class="btn_primary" id="btnSeconnecter">Se connecter</button>
+    </div>
+  </div>
+
+  <div id="popup_signin" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Nouveau compte</h1>
+
+    <input type="text" name="search" value="" placeholder="Identifiant">
+    <input type="text" name="search" value="" placeholder="Nom">
+    <input type="text" name="search" value="" placeholder="Prénom">
+    <input type="text" name="search" value="" placeholder="Adresse mail">
+    <input type="password" name="search" value="" placeholder="Mot de passe">
+    <input type="password" name="search" value="" placeholder="Confirmer le Mot de passe">
+    <div>
+      <button class="btn_secondary" onclick="btn_return_onclick()">Retour</button>
+      <button class="btn_primary" onclick="signIn()">Créer</button>
+    </div>
+
+  </div>
+
+  <header>
+    <div>
+      <a href="mainpage.html" target="_parent">
+          <img src="../data/img/logo.png" alt="logo MinePlace" class="logo">
+      </a>
+      <div id="header_buttons">
+          <div id="option" style="display: none;">
+              <a href="page_mon_compte">
+                  <img src="../data/img/command block.webp">
+                  Options</a>
+          </div>
+          <div id="logout" style="display: none;">
+              <a href="#">
+                  <img src="../data/img/head.webp">
+                  Se déconnecter</a>
+          </div>
+          <div id="login" style="display: flex;" onclick="btn_login_onclick()">
+              <img src="../data/img/head.webp">
+              <p>Se connecter</p>
+          </div>
+      </div>
+  </div>
+  <nav>
+      <ul>
+          <li>
+              <input id="search" type="text" name="search" value="" placeholder="Recherche">
+              <img src="../data/img/longue vue.png" alt="" class="spyglass">
+          </li>
+          <li><a href="deposer_annonce.html">Déposer une annonce</a></li>
+          <li><a href="mes_annonces.html">Mes annonces</a></li>
+          <li><a href="mes_parcelles.html">Mes parcelles</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  <main id="cond_dut_main">
+    <div id="cond_dut_maindiv">
+      <article class="cond_dut_article">
+        <h1 class="cond_dut_Condition générale">Conditions générales d'utilisation</h1>
+        <p class="cond_dut_p">
+          Inscription : les utilisateurs doivent s'inscrire sur le site en fournissant des informations
+          personnelles telles que leur nom, leur adresse e-mail pour pouvoir participer aux
+          enchères.
+        </p class="cond_dut_p">
+        <p class="cond_dut_p"> Utilisation légale : les utilisateurs s'engagent à utiliser le site de manière légale
+          et à respecter les
+          lois et règlementations en vigueur.
+        </p>
+        <p class="cond_dut_p"> Respect des conditions de vente : les utilisateurs s'engagent à respecter les
+          conditions de vente
+          énoncées par les vendeurs pour chaque objet mis en vente aux enchères.
+        </p>
+        <p class="cond_dut_p"> Paiement : les utilisateurs s'engagent à payer le prix de vente de l'objet qu'ils ont
+          remporté aux
+          enchères.
+        </p>
+        <p class="cond_dut_p"> Responsabilité : les utilisateurs sont responsables de toutes les informations qu'ils
+          fournissent sur le
+          site et s'engagent à ne pas publier d'informations fausses ou trompeuses.
+        </p>
+        <p class="cond_dut_p"> Droit de rétractation : les utilisateurs ont le droit de se rétracter dans un délai
+          de 14 jours après
+          l'achat, sauf pour certains types d'objets ou cas particuliers.
+        </p>
+        <p class="cond_dut_p"> Règles de conduite : les utilisateurs s'engagent à respecter les règles de conduite
+          énoncées par le
+          site, qui peuvent inclure des interdictions de comportement agressif ou d'utilisation abusive du site.
+        </p>
+        <p class="cond_dut_p"> Responsabilité du site : les sites de vente aux enchères sont responsables de la
+          gestion des objets mis
+          en vente et des enchères. Ils peuvent ainsi retirer les objets qui ne correspondent pas aux règles
+          énoncées,
+          ainsi que les annonces qui ne respectent pas les conditions générales d'utilisation.
+
+        </p>
+        <p class="cond_dut_p">Il est strictement interdit de publier des images à caractère sexuel ou offensant
+          envers une culture
+          ou un groupe de personnes sur notre site. Tout contenu violant cette règle sera immédiatement supprimé
+          et pourrait entraîner
+          la suspension ou la résiliation de votre compte utilisateur.</p>
+      </article>
+
+      <article class="cond_dut_article">
+        <h1 class="Condition_générale">Conditions générales de vente</h1>
+        <p class="cond_dut_p">
+          Frais de vente: Il y a une commission de vente de 10% sur le prix de vente final pour tous les articles
+          vendus.
+        </p>
+        <p class="cond_dut_p">
+          Paiement et livraison: Les acheteurs doivent payer pour les articles dans les 3 jours suivant la fin de la
+          vente. Les articles seront livrés dans les 7 jours suivant le paiement.
+        </p>
+        <p class="cond_dut_p">
+          Règles de conduite: Les utilisateurs doivent se conformer à toutes les lois et réglementations en vigueur lors
+          de la vente et de l'achat de produits numériques sur le site. Les utilisateurs ne peuvent pas utiliser des
+          informations frauduleuses ou trompeuses pour acheter ou vendre des produits numériques.
+        </p>
+
+        <p class="cond_dut_p">
+          Pour les produits numériques tels que nos produits, nous ne sommes pas tenus de respecter les règles de
+          rétractation standard. En achetant ces
+          produits, vous acceptez de renoncer expressément à votre droit de rétractation une fois que la fourniture a
+          commencé avec votre accord préalable.
+          en cas d'achat
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <a href="">Personnalisation des cookies</a>
+<a href="conditions_legales.html">Conditions de vente et d'achats</a>
+<a href="nous_contacter.html">Nous contacter</a>
+  </footer>
+
+</body>

@@ -1,0 +1,47 @@
+
+
+/********************************************************/
+/* CONTENU PRINCIPAL (SECTION)                          */
+/********************************************************/
+#boutonConnecterMinecraft{
+background-color:#327220;
+cursor: pointer;
+  width: fit-content;
+  margin: 5px;
+    
+}
+#boutonConnecterMinecraft img {  
+    width: 12em;
+}
+main{
+    display:flex;
+    justify-content: center;
+    width:100%;
+}
+#MonComptedivPrincipale{    background-color: rgb(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    margin-top: 5%;
+    color: lightgrey;
+    width:50%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    padding:1vw;
+    margin-bottom: 1vmin;
+
+}
+#MonComptedivPrincipale div {
+ 
+    width: fit-content;
+   
+}
+#MonComptedivPrincipale h1{margin:1vw;}
+.bouttonChanger{
+    background-color : rgb(var(--primary-color));
+    color: var(--textcolor);
+    padding: 8px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+

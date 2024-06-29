@@ -1,0 +1,312 @@
+html {
+    background-image: url('../../data/img/imagedefonddufigma.webp');
+    background-size: cover;
+
+    /* Variables de couleur */
+    --primary-color: 37, 63, 87;
+    --secondary-color: 81, 106, 130;
+    --tertiary-color: 123, 146, 168;
+    --textcolor: lightgrey;
+}
+
+body {
+    display: flex;
+    flex-flow: row wrap;  
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: var(--textcolor);
+}
+
+input {
+    cursor: auto;
+    background-color: rgb(var(--secondary-color));
+    color: var(--textcolor);
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.25em 0.5em
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.opacity {
+    opacity: 25%;
+}
+
+/********************************************************/
+/* FOOTER                                               */
+/********************************************************/
+
+
+
+/********************************************************/
+/* POPUP                                                */
+/********************************************************/
+
+.quit{
+    cursor: pointer;
+    padding: 4px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgb(var(--secondary-color));
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_primary{
+    padding: 12px;
+    font-size: 16px;
+    background-color: rgb(var(--secondary-color));
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgb(var(--primary-color));
+}
+
+.btn_primary:hover {
+    background-color: rgb(var(--primary-color));
+    border: 1px solid white;
+}
+
+.btn_secondary{
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid rgb(var(--primary-color));
+}
+
+.btn_secondary:hover {
+    border: 1px solid white;
+    background-color: rgb(var(--secondary-color));
+}
+
+.btn_changer{
+    padding: 5px;
+    background-color: rgb(var(--secondary-color));
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn_changer:hover {
+    background-color: rgb(var(--primary-color));
+    border: 1px solid white;
+}
+
+/********************************************************/
+/* POP UP LOGIN                                         */
+/********************************************************/
+
+#popup_login{
+    background-color:rgb(var(--primary-color)) ;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: 30vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 16px 32px;
+    border: 4px solid rgb(var(--secondary-color));
+    z-index: 1;
+}
+
+#popup_login input{
+    height: 32px;
+}
+
+#popup_login div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup_login h1{
+    color: var(--textcolor);
+    text-align: center;
+}
+
+#popup_login a{
+    color: var(--textcolor);
+    
+}
+
+#forgot_password{
+    font-size: 12px;
+}
+
+/********************************************************/
+/* POP UP SIGN IN                                       */
+/********************************************************/
+
+#popup_signin{
+    background-color:rgb(var(--primary-color)) ;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 16px 32px;
+    border: 4px solid rgb(var(--secondary-color));
+    z-index: 2;
+}
+
+#popup_signin div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup_signin input {
+    margin-top: 0.75em;
+}
+
+#popup_signin h1{
+    color: var(--textcolor);
+    text-align: center;
+}
+
+/********************************************************/
+/* Changer Name                                         */
+/********************************************************/
+
+#popup_modif_name{
+    background-color:rgb(var(--primary-color)) ;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: 30vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 16px 32px;
+    border: 4px solid rgb(var(--secondary-color));
+    z-index: 2;
+}
+
+#popup_modif_name input{
+    height: 32px;
+    margin:0.5em;
+}
+
+#popup_modif_name div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup_modif_name h1{
+    color: var(--textcolor);
+    text-align: center;
+}
+
+#popup_modif_name a{
+    color: var(--textcolor);
+}
+
+/********************************************************/
+/* Changer MDP                                          */
+/********************************************************/
+
+
+#popup_modif_mdp{
+    background-color:rgb(var(--primary-color)) ;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: 45vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 16px 32px;
+    border: 4px solid rgb(var(--secondary-color));
+    z-index: 1;
+}
+
+#popup_modif_mdp input{
+    height: 32px;
+    margin:0.5em;
+}
+
+#popup_modif_mdp div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup_modif_mdp h1{
+    color: var(--textcolor);
+    text-align: center;
+}
+
+
+
+#popup_modif_mdp a{
+    color: var(--textcolor);
+}
+
+
+
+/********************************************************/
+/* Changer paypal                                         */
+/********************************************************/
+
+
+#popup_paypal, #popup_paypal_notif{
+    background-color:rgb(var(--primary-color)) ;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 16px 32px;
+    border: 4px solid rgb(var(--secondary-color));
+    z-index: 1;
+}
+#input_valeur{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

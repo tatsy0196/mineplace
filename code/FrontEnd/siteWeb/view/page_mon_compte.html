@@ -1,0 +1,164 @@
+<head>
+  <title>mon_compte</title>
+  <link rel="stylesheet" type="text/css" href="design/page_mon_compte.css">
+  <link rel="stylesheet" type="text/css" href="design/login.css">
+  <link rel="stylesheet" type="text/css" href="design/main.css">
+  <link rel="stylesheet" type="text/css" href="design/header.css">
+  <link rel="stylesheet" type="text/css" href="design/footer.css">
+  <link rel="icon" type="image/png" href="../data/img/logo carré.png">
+  <script src="javascript/popup.js"></script>
+  <script src="javascript/fetch.js"></script>
+</head>
+
+<body>
+  <div id="popup_modif_name" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Changer votre pseudo</h1>
+    <input type="text" name="search" value="" placeholder="Nouveau pseudo">
+    <input type="text" name="search" value="" placeholder="Confirmer votre pseudo">
+    <input type="password" name="search" value="" placeholder="Entrer votre mot de passe">
+    <div>
+    <button class="btn_changer" onclick="">Changer</button>
+    </div>
+  </div>
+
+  <div id="popup_modif_mdp" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Changer votre mot de passe</h1>
+    <a>Entrer votre mot de passe actuel :</a>
+    <input type="password" name="search" value="" placeholder="Entrer votre mot de passe">
+    <a>Entrer votre nouveau mot de passe</a>
+    <input type="password" name="search" value="" placeholder="Entrer votre nouveau mot de passe">
+    <a>Confirmer votre mot de passe :</a>
+    <input type="password" name="search" value="" placeholder="Confirmer votre nouveau mot de passe">
+    <div>
+    <button class="btn_changer" onclick="">Changer</button>
+    </div>
+  </div>
+
+  <div id="popup_login" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Connexion</h1>
+    <input type="text" name="search" id="inputid" placeholder="Identifiant">
+    <input type="password" name="search" id="inputmdp" placeholder="Mot de passe">
+    <a href="" id="forgot_password">Mot de passe oublié ?</a>
+    <label id="connexionError" class="labelError" style="visibility: hidden;" n> Identifiant ou mot de passe incorrecte
+      !</label>
+    <div>
+      <button class="btn_secondary" onclick="btn_signin_onclick()">Créer un compte</a>
+        <button class="btn_primary" id="btnSeconnecter">Se connecter</button>
+    </div>
+  </div>
+
+  <div id="popup_paypal_notif" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Paiement accepté</h1>
+  </div>
+
+  <div id="popup_paypal" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Ajouter un solde à votre compte</h1>
+    <input name="valeur" type="number" value="" placeholder="valeur a ajouter ex: 10" id="input_valeur">
+
+    <script src="https://www.paypal.com/sdk/js?client-id=Ac5f9FnJDkfj7BGMno_3foto5uaLfKQ5jM6tMFaQDGN8LYXSv1Xe3vQlY1POkCksPLk6bMkNlKNSZDyg&currency=EUR"></script>
+    <div id="paypal-button-container"></div>
+    <script src="javascript/paypal.js" >  </script>
+    </div>
+  </div>
+
+
+
+  <div id="popup_signin" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Nouveau compte</h1>
+
+    <input type="text" name="search" value="" placeholder="Identifiant">
+    <input type="text" name="search" value="" placeholder="Nom">
+    <input type="text" name="search" value="" placeholder="Prénom">
+    <input type="text" name="search" value="" placeholder="Adresse mail">
+    <input type="password" name="search" value="" placeholder="Mot de passe">
+    <input type="password" name="search" value="" placeholder="Confirmer le Mot de passe">
+    <div>
+      <button class="btn_secondary" onclick="btn_return_onclick()">Retour</button>
+      <button class="btn_primary" onclick="signIn()">Créer</button>
+    </div>
+
+  </div>
+  <header>
+    <div>
+      <a href="mainpage.html" target="_parent">
+          <img src="../data/img/logo.png" alt="logo MinePlace" class="logo">
+      </a>
+      <div id="header_buttons">
+          <div id="option" style="display: none;">
+              <a href="page_mon_compte">
+                  <img src="../data/img/command block.webp">
+                  Options</a>
+          </div>
+          <div id="logout" style="display: none;">
+              <a href="#">
+                  <img src="../data/img/head.webp">
+                  Se déconnecter</a>
+          </div>
+          <div id="login" style="display: flex;" onclick="btn_login_onclick()">
+              <img src="../data/img/head.webp">
+              <p>Se connecter</p>
+          </div>
+      </div>
+  </div>
+  <nav>
+      <ul>
+          <li>
+              <input id="search" type="text" name="search" value="" placeholder="Recherche">
+              <img src="../data/img/longue vue.png" alt="" class="spyglass">
+          </li>
+          <li><a href="deposer_annonce.html">Déposer une annonce</a></li>
+          <li><a href="mes_annonces.html">Mes annonces</a></li>
+          <li><a href="mes_parcelles.html">Mes parcelles</a></li>
+      </ul>
+  </nav>
+  </header>
+
+
+
+  <main>
+    <div id="MonComptedivPrincipale">
+      <h1>Mon compte</h1>
+
+      <div>
+        <h3>Votre pseudo :</h3>
+        <input name="nickname" value="">
+        <button class="bouttonChanger" id="changernombouton" onclick="btn_modif_name_onclick()">Changer</button>
+      </div>
+      <div>
+        <h3>Mot de passe</h3>
+        <input type="password" name="mdp" value="" placeholder="nouveau mot de passe">
+        <button class="bouttonChanger" id="changermdpbouton" onclick="btn_modif_mdp_onclick()">changer</button>
+      </div>
+      <div>
+        <h3>Mail</h3>
+        <input name="mdp" value="" placeholder="">
+        <button class="bouttonChanger" id="changermailbouton">changer</button>
+      </div>
+      <div>
+        <h3>Connecter mineplace à Minecraft</h3>
+        <button id="boutonConnecterMinecraft"><img src="../data/img/MinecraftLogo.png" alt="minecraft logo"></button>
+      </div>
+      <div>
+        <h3>Solde</h3>
+        <label id="solde">100€</label>
+        <button class="bouttonChanger" id="alimenter" onclick="btn_paypal_onclick()"> ajouter</button>
+        <button class="bouttonChanger" id="retirée">retirer</button>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <a href="">Personnalisation des cookies</a>
+<a href="conditions_legales.html">Conditions de vente et d'achats</a>
+<a href="nous_contacter.html">Nous contacter</a>
+  </footer>
+
+</body>

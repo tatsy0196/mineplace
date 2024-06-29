@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head id="head">
+  <title>Nom de la parcelle</title>
+  <link rel="stylesheet" type="text/css" href="design/page_parcelle.css">
+  <link rel="stylesheet" type="text/css" href="design/main.css">
+  <link rel="stylesheet" type="text/css" href="design/header.css">
+  <link rel="stylesheet" type="text/css" href="design/footer.css">
+  <link rel="icon" type="image/png" href="../data/img/logo carré.png">
+  <script src="javascript/popup.js"></script>
+  <script src="javascript/fetch.js"></script>
+  <title class="title_nom"></title>
+</head>
+
+<body>
+  <div id="popup_mise_good" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Votre mise à bien été enregistré</h1>
+    <p>Votre mise est de : <p id="la_mise"></p></p>
+    <div>
+    <button class="btn_changer" onclick="btn_cancel_onclick()">Compris</button>
+    </div>
+  </div>
+
+  <div id="popup_mise_nogood" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Votre solde est insuffisant !!!</h1>
+    <div>
+    <button class="btn_changer" onclick="btn_cancel_onclick()">Compris</button>
+    <a href="page_mon_compte.html"><button class="btn_changer">Réaprovisionner</button></a>
+    </div>
+  </div>
+
+  <div id="popup_login" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Connexion</h1>
+    <input type="text" name="search" id="inputid" placeholder="Identifiant">
+    <input type="password" name="search" id="inputmdp" placeholder="Mot de passe">
+    <a href="" id="forgot_password">Mot de passe oublié ?</a>
+    <label id="connexionError" class="labelError" style="visibility: hidden;" n> Identifiant ou mot de passe incorrecte
+      !</label>
+    <div>
+      <button class="btn_secondary" onclick="btn_signin_onclick()">Créer un compte</a>
+        <button class="btn_primary" id="btnSeconnecter">Se connecter</button>
+    </div>
+  </div>
+
+  <div id="popup_signin" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Nouveau compte</h1>
+
+    <input type="text" name="search" value="" placeholder="Identifiant">
+    <input type="text" name="search" value="" placeholder="Nom">
+    <input type="text" name="search" value="" placeholder="Prénom">
+    <input type="text" name="search" value="" placeholder="Adresse mail">
+    <input type="password" name="search" value="" placeholder="Mot de passe">
+    <input type="password" name="search" value="" placeholder="Confirmer le Mot de passe">
+    <div>
+      <button class="btn_secondary" onclick="btn_return_onclick()">Retour</button>
+      <button class="btn_primary" onclick="signIn()">Créer</button>
+    </div>
+
+  </div>
+  <header>
+    <div>
+      <a href="mainpage.html" target="_parent">
+          <img src="../data/img/logo.png" alt="logo MinePlace" class="logo">
+      </a>
+      <div id="header_buttons">
+          <div id="option" style="display: none;">
+              <a href="page_mon_compte">
+                  <img src="../data/img/command block.webp">
+                  Options</a>
+          </div>
+          <div id="logout" style="display: none;">
+              <a href="#">
+                  <img src="../data/img/head.webp">
+                  Se déconnecter</a>
+          </div>
+          <div id="login" style="display: flex;" onclick="btn_login_onclick()">
+              <img src="../data/img/head.webp">
+              <p>Se connecter</p>
+          </div>
+      </div>
+  </div>
+  <nav>
+      <ul>
+          <li>
+              <input id="search" type="text" name="search" value="" placeholder="Recherche">
+              <img src="../data/img/longue vue.png" alt="" class="spyglass">
+          </li>
+          <li><a href="deposer_annonce.html">Déposer une annonce</a></li>
+          <li><a href="mes_annonces.html">Mes annonces</a></li>
+          <li><a href="mes_parcelles.html">Mes parcelles</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  <main>
+
+    <div id="first">
+      <a href="mainpage.html"><img id="fleche" src="../data/img/fleche.png"></a>
+      <div id="entete">
+        <h1 id="nom_parcelle">[Nom de la parcelle]</h1>
+        <h2 id="nom_createur">[Nom du créateur]</h3>
+      </div>
+    </div>
+
+
+    <div id="second">
+
+      <div class="slider-container">
+        <div class="menu">
+          <label for="slide-dot-1"></label>
+          <label for="slide-dot-2"></label>
+          <label for="slide-dot-3"></label>
+        </div>
+        <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+        <img class="slide-img" src="../data/img/testslide1.jpg">
+
+        <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+        <img class="slide-img" src="../data/img/testslide2.jpg">
+
+        <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
+        <img class="slide-img" src="../data/img/index.jpg">
+      </div>
+
+      <div class="page_parcelle_description">
+        <h1>Description</h1>
+        <div class="description">
+          <p id="description_para">[Description]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a quam
+            vel leo interdum hendrerit in eu risus. Proin porttitor pulvinar tristique. Vestibulum tempor lorem vel
+            lectus ultricies viverra accumsan eu magna. Morbi viverra quam id nulla suscipit, eget ornare massa congue.
+            Mauris commodo eu magna iaculis pulvinar. Maecenas tempus consequat ipsum in vulputate. Integer et risus
+            commodo, porta nulla ac, egestas orci. Quisque a augue et urna dictum finibus. </p>
+        </div>
+
+        <div id="encherir">
+          <div class="tableparcelle">
+            <input id="montant_enchere" placeholder="€"><button id="btn_encherir">Enchérir</button>
+          </div>
+        </div>
+
+        <div id="encheres">
+
+          <div class="enchere">
+            <p>350€</p>
+            <input value="">
+            <p>Robin</p>
+          </div>
+
+          <div class="enchere">
+            <p>300€</p>
+            <input value="">
+            <p>Wassim</p>
+          </div>
+
+          <div class="enchere">
+            <p>250€</p>
+            <input value="">
+            <p>Quentin</p>
+          </div>
+
+          <div class="enchere">
+            <p>200€</p>
+            <input value="">
+            <p>Corentin</p>
+          </div>
+
+          <div class="enchere">
+            <p>150€</p>
+            <input value="">
+            <p>Terry</p>
+          </div>
+
+          <div class="enchere">
+            <p>100€</p>
+            <input value="">
+            <p>Guillaume</p>
+          </div>
+
+          <div class="enchere">
+            <p>350€</p>
+            <input value="">
+            <p>Robin</p>
+          </div>
+
+          <div class="enchere">
+            <p>300€</p>
+            <input value="">
+            <p>Wassim</p>
+          </div>
+
+          <div class="enchere">
+            <p>250€</p>
+            <input value="">
+            <p>Quentin</p>
+          </div>
+
+          <div class="enchere">
+            <p>200€</p>
+            <input value="">
+            <p>Corentin</p>
+          </div>
+
+          <div class="enchere">
+            <p>150€</p>
+            <input value="">
+            <p>Terry</p>
+          </div>
+
+          <div class="enchere">
+            <p>100€</p>
+            <input value="">
+            <p>Guillaume</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="third">
+      <table class="page_parcelle_tableau">
+        <tr>
+          <th>Date de début</th>
+          <th>Date de fin</th>
+          <th>Prix de départ</th>
+          <th>Biomes</th>
+          <th>Coordonnées</th>
+          <th>Taille</th>
+        </tr>
+        <tr>
+          <td class="date">15/01/2023 - 11:53</td>
+          <td class="duree">22/01/2023 - 11:53</td>
+          <td class="prixdep">50€</td>
+          <td class="biomes">Plaines, Océan, Taïga</td>
+          <td class="coordonnees">X=400 Z=-250</td>
+          <td class="taille">50x50</td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+
+<script src="./javascript/enchere.js"></script>
+<a href="">Personnalisation des cookies</a>
+<a href="conditions_legales.html">Conditions de vente et d'achats</a>
+<a href="nous_contacter.html">Nous contacter</a>
+<script src="./javascript/pageEnchere.js"></script>
+
+</html>

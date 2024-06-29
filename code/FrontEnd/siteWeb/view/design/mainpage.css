@@ -1,0 +1,230 @@
+/********************************************************/
+/* CONTENU PRINCIPAL (MAIN)                             */
+/********************************************************/
+
+main {
+    width: 98vw;
+    height: 85vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 2vh 1vw;
+}
+
+/********************************************************/
+/* ASIDE                                                */
+/********************************************************/
+
+aside {
+    background-color: rgba(var(--primary-color), 0.65);
+    width: 24vw;
+    border-radius: 0.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+    max-height: 100%;
+}
+
+aside>div {
+    margin: 2vh 0;
+}
+
+aside form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 2vh;
+    width: 100%;
+}
+
+aside h2 {
+    background-color: rgba(var(--primary-color), 0.8);
+    color: var(--textcolor);
+    margin-left: 0.25em;
+    width: 85%;
+    padding: 0.1em 0.5em;
+    border-radius: 0.5em;
+}
+
+aside ul {
+    padding: 0.1em;
+    border-radius: 0.5em;
+    margin-left: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    color: var(--textcolor);
+
+}
+
+aside li {
+    padding: 0.1em 0.5em;
+    border-radius: 0.5em;
+    white-space: nowrap;
+    background-color: rgb(var(--tertiary-color));
+    transition: background-color 0.2s;
+}
+
+aside li:hover {
+    background-color: rgb(var(--primary-color));
+}
+
+#biomes h3 {
+    padding: 0.2em 1em;
+    margin: 0.5em 1em;
+    width: fit-content;
+    border-radius: 0.5em;
+    background-color: rgba(var(--secondary-color), 0.5);
+    color: var(--textcolor);
+    transition: background-color 0.2s;
+}
+
+#biomes h3:hover {
+    background-color: rgb(var(--primary-color));
+}
+
+#types {
+    margin: 1vw;
+    padding: 0;
+}
+
+#types li {
+    padding: 0.5em 0.5em;
+    margin: 0.2em;
+    border-radius: 0.5em;
+    background-color: rgb(var(--tertiary-color));
+    color: var(--textcolor);
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-bottom: 7px solid var(--textcolor);
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    transition: transform 0.3s;
+}
+
+.triangle-down {
+    transform: rotate(180deg);
+}
+
+label{
+    padding: 0.1em 0.5em;
+    border-radius: 0.5em;
+    transition: background-color 0.2s;
+    background-color: rgb(var(--tertiary-color));
+}
+
+ul div {
+    margin: 4px;
+}
+input[type="checkbox"] {
+    visibility: hidden;
+width: 0px;
+height:0px;
+position: absolute;
+  }
+
+ 
+  label:hover{
+    background-color: rgb(var(--secondary-color));    
+}
+  input:checked + label {
+    background-color: rgb(var(--primary-color));    
+  }
+
+ 
+
+
+
+/********************************************************/
+/* SECTION                                              */
+/********************************************************/
+
+
+section {
+    width: 72vw;
+    height: 100%;
+    overflow-y: auto;
+}
+
+section>h2 {
+    background-color: rgba(var(--primary-color), 0.8);
+    color: var(--textcolor);
+    width: 50%;
+    padding: 0.1em 0.5em;
+    border-radius: 0.5em
+}
+
+
+/********************************************************/
+/* ARTICLES                                             */
+/********************************************************/
+
+.article {
+    background-color: rgba(var(--primary-color), 0.75);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    width: auto;
+    margin-top: 1em;
+    flex-flow: row wrap;
+}
+
+.article div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5em;
+    width: 50vw;
+    justify-content: center;
+}
+
+.article div * {
+    margin: 1% 0;
+    color: var(--textcolor);
+}
+
+.article img {
+    max-width: 15vw;
+    max-height: 25vh;
+    object-fit: contain;
+}
+
+.article table {
+    border-radius: 0.5em;
+    text-align: center;
+    max-width: 100%;
+    background-color: rgb(var(--primary-color));
+    border-spacing: 0px;
+    border: 3px solid black;
+}
+
+.article table th {
+    border-bottom: 2px solid black;
+}
+
+.article table td {
+    max-width: 25%;
+}
+
+.article table * {
+    padding: 0.5em;
+}
+
+.article h3 {
+    font-weight: normal;
+}
+
+/********************************************************/
+/* Erreur                                               */
+/********************************************************/
+#signIn_Erreur{
+    color: red;
+}
+
+p {
+    color: #c0001a;
+    font-weight: bold;
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Page d'accueil Mineplace</title>
+  <link rel="stylesheet" type="text/css" href="design/mainpage.css">
+  <link rel="stylesheet" type="text/css" href="design/main.css">
+  <link rel="stylesheet" type="text/css" href="design/header.css">
+  <link rel="stylesheet" type="text/css" href="design/footer.css">
+  <link rel="icon" type="image/png" href="../data/img/logo carré.png">
+  <script src="javascript/login.js"></script>
+  <script src="javascript/mainpage.js"></script>
+  <script src="javascript/popup.js"></script>
+  <script src="javascript/fetch.js"></script>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <div id="popup_login" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Connexion</h1>
+    <p id="connexionError" style="display: none;" n> Identifiant ou mot de passe incorrecte!</p>
+    <input type="text" name="username" id="username_login" placeholder="Identifiant">
+    <p id="erreur_pseudo_login" style="display: none;">Insérer un pseudo</p>
+
+    <input type="password" name="password" id="password_login" placeholder="Mot de passe">
+    <p id="password_nogood_login" style="display: none;">Insérer un mot de passe</p>
+
+    <a href="" id="forgot_password">Mot de passe oublié ?</a>
+    <div>
+      <button class="btn_secondary" onclick="btn_signin_onclick()">Créer un compte</button>
+      <button class="btn_primary" onclick="login()">Se connecter</button>
+    </div>
+  </div>
+
+  <div id="popup_signin" style="display: none;">
+    <p class="quit" onclick="btn_cancel_onclick()">×</p>
+    <h1>Nouveau compte</h1>
+
+    <input type="text" name="username" id="username_signin" placeholder="Identifiant">
+    <p id="erreur_pseudo" style="display: none;">Insérer un pseudo</p>
+
+    <input type="text" name="last_name" id="last_name" placeholder="Nom">
+    <p id="erreur_nom" style="display: none;">Insérer un nom</p>
+
+    <input type="text" name="first_name" id="first_name" placeholder="Prénom">
+    <p id="erreur_prenom" style="display: none;">Insérer un prénom</p>
+
+    <input type="text" name="mail" id="mail" placeholder="Adresse mail">
+    <p id="erreur_mail" style="display: none;">Insérer un adresse mail</p>
+
+    <input type="text" name="first_name" id="adresse" placeholder="Adressse">
+    <p id="erreur_adresse" style="display: none;">Insérer une adresse</p>
+
+    <input type="text" name="first_name" id="codePostal" placeholder="Code postal">
+    <p id="erreur_codepostal" style="display: none;">Insérer un code postal</p>
+
+    <input type="text" name="first_name" id="ville" placeholder="Ville">
+    <p id="erreur_ville" style="display: none;">Insérer une ville</p>
+
+    <input type="password" name="password" id="password_signin" placeholder="Mot de passe" value="">
+    <p id="password_nogood" style="display: none;">Mot de passe trop faible</p>
+
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le Mot de passe"
+      value="">
+    <p id="erreur_password" style="display: none;">Mot de passe non identique</p>
+
+    <div>
+      <button class="btn_secondary" onclick="btn_return_onclick()">Retour</button>
+      <button class="btn_primary" onclick="signIn()">Créer</button>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <a href="mainpage.html" target="_parent">
+          <img src="../data/img/logo.png" alt="logo MinePlace" class="logo">
+      </a>
+      <div id="header_buttons">
+          <div id="option" style="display: none;">
+              <a href="page_mon_compte">
+                  <img src="../data/img/command block.webp">
+                  Options</a>
+          </div>
+          <div id="logout" style="display: none;">
+              <a href="#">
+                  <img src="../data/img/head.webp">
+                  Se déconnecter</a>
+          </div>
+          <div id="login" style="display: flex;" onclick="btn_login_onclick()">
+              <img src="../data/img/head.webp">
+              <p>Se connecter</p>
+          </div>
+      </div>
+  </div>
+  <nav>
+      <ul>
+          <li>
+              <input id="search" type="text" name="search" value="" placeholder="Recherche">
+              <img src="../data/img/longue vue.png" alt="" class="spyglass">
+          </li>
+          <li><a href="deposer_annonce.html">Déposer une annonce</a></li>
+          <li><a href="mes_annonces.html">Mes annonces</a></li>
+          <li><a href="mes_parcelles.html">Mes parcelles</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  <main>
+    <aside class="aside">
+      <div id="prix">
+        <h2>Prix actuel</h2>
+        <form>
+          <input name="min" placeholder="Prix minimum">
+          <input name="max" placeholder="Prix maximum">
+        </form>
+      </div>
+      <div id="biomes">
+        <h2>Biomes</h2>
+        <div>
+
+          <h3 onclick="toggleList('snowy')">Enneigés<span class="triangle"></span></h3>
+          <ul id="snowy" style="display:none;">
+
+            <div> <input type="checkbox" id="1" name="subscribe" value="newsletter">
+              <label for="1">Plaines enneigées </label>
+            </div>
+
+            <div> <input type="checkbox" id="2" name="subscribe" value="newsletter">
+              <label for="2">Stalagmites de glace </label>
+            </div>
+
+            <div><input type="checkbox" id="3" name="subscribe" value="newsletter">
+              <label for="3">Taïga enneigée </label>
+            </div>
+
+            <div> <input type="checkbox" id="4" name="subscribe" value="newsletter">
+              <label for="4">Plage enneigée </label>
+            </div>
+
+            <div><input type="checkbox" id="5" name="subscribe" value="newsletter">
+              <label for="5">Bosquet </label>
+            </div>
+
+            <div><input type="checkbox" id="6" name="subscribe" value="newsletter">
+              <label for="6">Pics dentelés </label>
+            </div>
+
+            <div> <input type="checkbox" id="7" name="subscribe" value="newsletter">
+              <label for="7">Pics gelés </label>
+            </div>
+
+
+
+          </ul>
+
+          <h3 onclick="toggleList('cold')">Froids<span class="triangle"></span></h3>
+          <ul id="cold" style="display:none;">
+
+            <div> <input type="checkbox" id="8" name="subscribe" value="newsletter">
+              <label for="8">Collines venteuses</label>
+            </div>
+
+            <div> <input type="checkbox" id="9" name="subscribe" value="newsletter">
+              <label for="9">Collines graveleuses venteuses</label>
+            </div>
+
+            <div> <input type="checkbox" id="10" name="subscribe" value="newsletter">
+              <label for="10">Forêt venteuse</label>
+            </div>
+
+            <div><input type="checkbox" id="11" name="subscribe" value="newsletter">
+              <label for="11">Taïga</label>
+            </div>
+
+            <div><input type="checkbox" id="12" name="subscribe" value="newsletter">
+              <label for="12">Taïga ancienne de pins</label>
+            </div>
+
+            <div><input type="checkbox" id="13" name="subscribe" value="newsletter">
+              <label for="13">Taïga ancienne de sapins</label>
+            </div>
+
+            <div> <input type="checkbox" id="14" name="subscribe" value="newsletter">
+              <label for="14">Côte rocheuse</label>
+            </div>
+
+          </ul>
+
+          <h3 onclick="toggleList('temperate')">Tempérés<span class="triangle"></span></h3>
+          <ul id="temperate" style="display:none;">
+
+
+            <div> <input type="checkbox" id="15" name="subscribe" value="newsletter">
+              <label for="15">Plaines</label>
+            </div>
+
+            <div> <input type="checkbox" id="16" name="subscribe" value="newsletter">
+              <label for="16">Plaines de tournesols</label>
+            </div>
+
+            <div> <input type="checkbox" id="17" name="subscribe" value="newsletter">
+              <label for="17">Forêt</label>
+            </div>
+
+            <div> <input type="checkbox" id="18" name="subscribe" value="newsletter">
+              <label for="18">Forêt fleurie</label>
+            </div>
+
+            <div> <input type="checkbox" id="19" name="subscribe" value="newsletter">
+              <label for="19">Forêt de bouleaux</label>
+            </div>
+
+            <div> <input type="checkbox" id="20" name="subscribe" value="newsletter">
+              <label for="20">Forêt ancienne de bouleaux</label>
+            </div>
+
+            <div> <input type="checkbox" id="21" name="subscribe" value="newsletter">
+              <label for="21">Forêt sombre</label>
+            </div>
+
+            <div> <input type="checkbox" id="22" name="subscribe" value="newsletter">
+              <label for="22">Marais</label>
+            </div>
+
+            <div> <input type="checkbox" id="23" name="subscribe" value="newsletter">
+              <label for="23">Marais à mangroves</label>
+            </div>
+
+            <div> <input type="checkbox" id="24" name="subscribe" value="newsletter">
+              <label for="24">Jungle</label>
+            </div>
+
+            <div> <input type="checkbox" id="25" name="subscribe" value="newsletter">
+              <label for="25">Jungle clairsemée</label>
+            </div>
+
+            <div> <input type="checkbox" id="26" name="subscribe" value="newsletter">
+              <label for="26">Jungle de bambous</label>
+            </div>
+
+            <div> <input type="checkbox" id="27" name="subscribe" value="newsletter">
+              <label for="27">Plage</label>
+            </div>
+
+            <div> <input type="checkbox" id="28" name="subscribe" value="newsletter">
+              <label for="28">Champs de champignons</label>
+            </div>
+
+            <div> <input type="checkbox" id="29" name="subscribe" value="newsletter">
+              <label for="29">Prairie</label>
+            </div>
+
+            <div> <input type="checkbox" id="30" name="subscribe" value="newsletter">
+              <label for="30">Pics rocheux</label>
+            </div>
+
+
+          </ul>
+
+          <h3 onclick="toggleList('warm')">Arides<span class="triangle"></span></h3>
+          <ul id="warm" style="display:none;">
+            <div> <input type="checkbox" id="31" name="subscribe" value="newsletter">
+              <label for="31">Désert</label>
+            </div>
+
+            <div> <input type="checkbox" id="32" name="subscribe" value="newsletter">
+              <label for="32">Savane</label>
+            </div>
+
+            <div> <input type="checkbox" id="33" name="subscribe" value="newsletter">
+              <label for="33">Plateau de savane</label>
+            </div>
+
+            <div> <input type="checkbox" id="34" name="subscribe" value="newsletter">
+              <label for="34">Savane venteuse</label>
+            </div>
+
+            <div> <input type="checkbox" id="35" name="subscribe" value="newsletter">
+              <label for="35">Badlands</label>
+            </div>
+
+            <div> <input type="checkbox" id="36" name="subscribe" value="newsletter">
+              <label for="36">Badlands boisées</label>
+            </div>
+
+            <div> <input type="checkbox" id="37" name="subscribe" value="newsletter">
+              <label for="37">Badlands érodées</label>
+            </div>
+
+
+          </ul>
+
+          <h3 onclick="toggleList('aquatic')">Aquatiques<span class="triangle"></span></h3>
+          <ul id="aquatic" style="display:none;">
+
+            <div> <input type="checkbox" id="38" name="subscribe" value="newsletter">
+              <label for="38">Rivière</label>
+            </div>
+
+            <div> <input type="checkbox" id="39" name="subscribe" value="newsletter">
+              <label for="39">Rivière gelée</label>
+            </div>
+
+            <div> <input type="checkbox" id="40" name="subscribe" value="newsletter">
+              <label for="40">Océan chaud</label>
+            </div>
+
+            <div> <input type="checkbox" id="41" name="subscribe" value="newsletter">
+              <label for="41">Océan tiède</label>
+            </div>
+
+            <div> <input type="checkbox" id="42" name="subscribe" value="newsletter">
+              <label for="42">Océan tiède profond</label>
+            </div>
+
+            <div> <input type="checkbox" id="43" name="subscribe" value="newsletter">
+              <label for="43">Océan</label>
+            </div>
+
+            <div> <input type="checkbox" id="44" name="subscribe" value="newsletter">
+              <label for="44">Océan profond</label>
+            </div>
+
+            <div> <input type="checkbox" id="45" name="subscribe" value="newsletter">
+              <label for="45">Océan froid</label>
+            </div>
+
+            <div> <input type="checkbox" id="46" name="subscribe" value="newsletter">
+              <label for="46">Océan froid profond</label>
+            </div>
+
+            <div> <input type="checkbox" id="47" name="subscribe" value="newsletter">
+              <label for="47">Océan gelé</label>
+            </div>
+
+            <div> <input type="checkbox" id="48" name="subscribe" value="newsletter">
+              <label for="48">Océan gelé profond</label>
+            </div>
+
+
+          </ul>
+
+          <h3 onclick="toggleList('cave')">Souterrains<span class="triangle"></span></h3>
+          <ul id="cave" style="display:none;">
+            <div> <input type="checkbox" id="49" name="subscribe" value="newsletter">
+              <label for="49">Abîmes</label>
+            </div>
+
+            <div> <input type="checkbox" id="50" name="subscribe" value="newsletter">
+              <label for="50">Cavernes de spéléothèmes</label>
+            </div>
+
+            <div> <input type="checkbox" id="51" name="subscribe" value="newsletter">
+              <label for="51">Cavernes luxuriantes</label>
+            </div>
+
+          </ul>
+
+        </div>
+      </div>
+      </div>
+
+      <h2>
+        Types
+      </h2>
+      <ul id="types">
+        <li>Vierge</li>
+        <li>Amenagé</li>
+      </ul>
+    </aside>
+
+    <section id="parcelle-list">
+      <h2>
+        Parcelles en vente
+      </h2>
+
+      <div class="article" style="display: none;" >
+        <a href="page_parcelle.html">
+        <img class="image" src="" alt="image de la parcelle">
+        <div class="description-article-mainPage">
+          <h2 class="nom">[nom]</h2>
+          <h3 class="prix">[prix]</h3>
+          <table>
+            <tr>
+              <th>Créateur</th>
+              <th>Biomes</th>
+              <th>Coordonnées</th>
+              <th>Taille</th>
+            </tr>
+            <tr>
+              <td class="createur">[créateur]</td>
+              <td class="biomes">[biomes</td>
+              <td class="coordonnees">[coordonnées]</td>
+              <td class="taille">[taille]</td>
+            </tr>
+          </table>
+        </div>
+        </a>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="">Personnalisation des cookies</a>
+    <a href="conditions_legales.html">Conditions de vente et d'achats</a>
+    <a href="nous_contacter.html">Nous contacter</a>
+  </footer>
+
+</body>
+
+<script src="./javascript/User.js"></script>
+<script src="javascript/signin.js"></script>
+<script src="javascript/getParcelles.js"></script>
